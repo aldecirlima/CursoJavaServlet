@@ -14,6 +14,10 @@ atribui a ela um alias que será utilizado na tag foreach mais abaixo -->
 <title>Java Stantard Taglib</title>
 </head>
 <body>
+	
+	<c:import url="logout-parcial.jsp"/>
+	
+	Usuario logado: ${usuarioLogado.login }
 
 	<c:if test="${not empty empresa}">
 		<h3>Empresa "${empresa}" cadastrada com sucesso!</h3>

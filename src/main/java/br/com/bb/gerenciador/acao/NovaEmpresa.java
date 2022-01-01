@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.bb.gerenciador.modelo.Banco;
 import br.com.bb.gerenciador.modelo.Empresa;
 
-public class NovaEmpresa {
-
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class NovaEmpresa implements Acao {
+	
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("Cadastrando nova empresa.");
 
@@ -41,7 +42,7 @@ public class NovaEmpresa {
 
 //			O response.sendRedirect, responde ao navegador, e informa qual deve ser a nova requisição
 //			a ser efetuada pelo próprio navegador. Obs: neste caso não se usa o "/", usamos somente o nome do servlet
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 
 	}
 }

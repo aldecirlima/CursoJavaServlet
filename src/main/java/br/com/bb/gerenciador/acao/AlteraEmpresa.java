@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.bb.gerenciador.modelo.Banco;
 import br.com.bb.gerenciador.modelo.Empresa;
 
-public class AlteraEmpresa {
-
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class AlteraEmpresa implements Acao {
+	
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 //		Obtendo os parametros da requisição http com o request.getParameter
 		String nomeEmpresa = request.getParameter("nome");
@@ -38,7 +39,8 @@ public class AlteraEmpresa {
 
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		
+		return "redirect:entrada?acao=ListaEmpresas";
 
 	}
 

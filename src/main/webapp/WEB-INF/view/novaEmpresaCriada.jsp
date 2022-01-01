@@ -4,6 +4,7 @@
 
 <html>
 <body>
+	<c:import url="logout-parcial.jsp"/>
 	<c:if test="${not empty empresa}">
 		<h3>Empresa "${empresa}" cadastrada com sucesso!</h3>
 	</c:if>

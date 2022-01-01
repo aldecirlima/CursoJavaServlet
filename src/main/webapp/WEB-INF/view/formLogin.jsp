@@ -8,14 +8,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 
 	<form action="${linkEntradaServlet}" method="post">
-		<label>Nome:</label> <input type="text" name="nome" /> 
-		<label>Data de Abertura:</label> <input type="text" name="data" /> 
-		<input type="hidden" name="acao" value="NovaEmpresa"/>
+		<label>Login:</label> <input type="text" name="login" /> 
+		<label>Senha:</label> <input type="password" name="senha" /> 
+		<input type="hidden" name="acao" value="Login"/>
 		<input type="submit" />
 
 	</form>
